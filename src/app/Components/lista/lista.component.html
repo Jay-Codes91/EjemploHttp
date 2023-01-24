@@ -4,7 +4,7 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">id</th>
+        <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido 1</th>
         <th scope="col">Apellido 2</th>
@@ -12,8 +12,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let emp of empleados">
-        <th scope="row">{{emp.id}}</th>
+      <tr *ngFor="let emp of empleados, let i = index">
+        <th scope="row">{{i +1}}</th>
         <td>{{emp.nombre}}</td>
         <td>{{emp.apellido1}}</td>
         <td>{{emp.apellido2}}</td>

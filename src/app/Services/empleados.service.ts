@@ -14,4 +14,8 @@ export class EmpleadosService {
   getEmpleados():Observable<any>{
     return this._http.get(this.url);
   }
+
+  addEmp(empleado: any):Observable<any>{
+    return this._http.post(this.url, empleado)
+  }
 }

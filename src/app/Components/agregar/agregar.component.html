@@ -1,1 +1,81 @@
-<p>agregar works!</p>
+<h1 class="text-center">Agregar Empleados</h1><hr><br>
+
+<div class="formulario w-50 mx-auto">
+    <form [formGroup]="form" class="row" (ngSubmit)="agregar()"  >
+        <div class="col-12">
+            <label for="nom" class="form-label">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" name="nombre" id="nombre">
+        </div>
+        <!--Validación nombre-->
+        <div
+            *ngIf="form.controls['nombre']?.invalid && (form.controls['nombre']?.dirty || form.controls['nombre']?.touched)">
+            <span class="text-danger" *ngIf="form.controls['nombre'].errors?.['required']">
+              Campo obligatorio
+            </span>
+
+            <span class="text-danger" *ngIf="form.controls['nombre'].errors?.['maxlength']">
+                No puede exceder de 20 caracteres
+            </span>
+        </div>
+
+        <div class="col-12">
+            <label for="ape" class="form-label">Primer Apellido</label>
+            <input type="text" class="form-control" formControlName="apellido1" name="apellido1" id="apellido1">
+        </div>
+        <!--Validación Apellido 1-->
+
+        <div
+            *ngIf="form.controls['apellido1']?.invalid && (form.controls['apellido1']?.dirty || form.controls['apellido1']?.touched)">
+            <span class="text-danger" *ngIf="form.controls['apellido1'].errors?.['required']">
+              Campo obligatorio
+            </span>
+
+            <span class="text-danger" *ngIf="form.controls['apellido1'].errors?.['maxlength']">
+                No puede exceder de 20 caracteres
+            </span>
+        </div>
+
+        <div class="col-12">
+            <label for="ape2" class="form-label">Segundo Apellido</label>
+            <input type="text" class="form-control" formControlName="apellido2" name="apellido2" id="apellido2">
+        </div>
+        <!--Validación apellido2-->
+
+        <div
+            *ngIf="form.controls['apellido2']?.invalid && (form.controls['apellido2']?.dirty || form.controls['apellido2']?.touched)">
+            <span class="text-danger" *ngIf="form.controls['apellido2'].errors?.['required']">
+              Campo obligatorio
+            </span>
+
+            <span class="text-danger" *ngIf="form.controls['apellido2'].errors?.['maxlength']">
+                No puede exceder de 20 caracteres
+            </span>
+        </div>
+        
+        <div class="col-12">
+            <label for="ape2" class="form-label">Correo</label>
+            <input type="email" class="form-control" formControlName="correo" name="correo" id="correo">
+        </div>
+        <!--Validación correo-->
+
+        <div
+            *ngIf="form.controls['correo']?.invalid && (form.controls['correo']?.dirty || form.controls['correo']?.touched)">
+            <span class="text-danger" *ngIf="form.controls['correo'].errors?.['required']">
+              Campo obligatorio
+            </span>
+
+            <span class="text-danger" *ngIf="form.controls['correo'].errors?.['maxlength']">
+                No puede exceder de 50 caracteres
+            </span>
+
+            <span class="text-danger" *ngIf="form.controls['correo'].errors?.['email']">
+                El formato del correo es inválido
+              </span>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center mt-3">
+           <button class="btn btn-primary" type="submit" [disabled]="this.form.invalid">Enviar</button>
+        </div>
+        
+    </form>
+</div>
