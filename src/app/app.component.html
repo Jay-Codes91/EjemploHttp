@@ -1,24 +1,49 @@
-<h1 class="text-center animate__animated animate__bounce"></h1><br>
+<nav class="d-flex p-2 bg-info">
 
-<div class="container">
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido 1</th>
-        <th scope="col">Apellido 2</th>
-        <th scope="col">Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let emp of empleados">
-        <th scope="row">{{emp.id}}</th>
-        <td>{{emp.nombre}}</td>
-        <td>{{emp.apellido1}}</td>
-        <td>{{emp.apellido2}}</td>
-        <td>{{emp.correo}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        <a class="navbar-brand text-dark" href="#" style="font-size: 30px;">Navbar</a>
+
+        <div class="align-self-center d-none d-sm-block">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" routerLink="/lista">Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" routerLink="/agregar">Añadir empleado</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <button class="btn btn-outline-dark d-block d-sm-none align-self-center p-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#nav">
+            M
+        </button>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="nav"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header bg-light">
+                <a class="navbar-brand text-dark" href="#" style="font-size: 30px;">Navbar</a>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item border-bottom">
+                        <a class="nav-link active text-dark" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item border-bottom">
+                        <a class="nav-link text-dark" href="#">Link 1</a>
+                    </li>
+                    <li class="nav-item border-bottom">
+                        <a class="nav-link text-dark" href="#">Link 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+</nav>
+
+<router-outlet></router-outlet>
+
+

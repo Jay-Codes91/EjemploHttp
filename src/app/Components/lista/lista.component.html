@@ -1,0 +1,24 @@
+<h1 class="text-center animate__animated animate__bounce">Lista de Empleados</h1><br>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido 1</th>
+        <th scope="col">Apellido 2</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empleados">
+        <th scope="row">{{emp.id}}</th>
+        <td>{{emp.nombre}}</td>
+        <td>{{emp.apellido1}}</td>
+        <td>{{emp.apellido2}}</td>
+        <td>{{emp.correo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
