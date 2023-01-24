@@ -18,4 +18,8 @@ export class EmpleadosService {
   addEmp(empleado: any):Observable<any>{
     return this._http.post(this.url, empleado)
   }
+
+  delEmp(id: number): Observable<any>{
+    return this._http.delete(this.url + "/" + id);
+  }
 }
